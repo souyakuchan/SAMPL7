@@ -7,7 +7,7 @@ Japanese translation of the SAMPL7 protein-ligand challenge
 新たな SAMPL7 チャレンジのお知らせ。比較的シンプルな標的タンパク質に対する、フラグメントライクな低分子の結合予測問題を提供する。  
 
 <!-- The second bromodomain of PHIP (PHIP2)---a small protein for which little small molecule binding data is available---was targeted in an extensive X-ray crystallographic fragment screening experiment, leading to 3D structures of multiple screening hits. -->
-PHIP というタンパク質の２番目のブロモドメイン、PHIP2 は低分子の結合に関するデータがほとんど無い小さなタンパク質だが、今回、X線結晶解析による徹底的なフラグメント化合物スクリーニング実験が行われ、複数のスクリーニングヒットの三次元構造が得られた。
+PHIP というタンパク質の2番目のブロモドメイン、PHIP2 は低分子の結合に関するデータがほとんど無い小さなタンパク質だが、今回、X線結晶解析による徹底的なフラグメント化合物スクリーニング実験が行われ、複数のスクリーニングヒットの3次元構造が得られた。
 <!-- This SAMPL7 challenge will take advantage of this dataset, assessing the accuracy of computational methods for the discrimination of binders from non-binders, binding pose prediction, and the unique opportunity to select new candidate ligands to be screened from a provided set of purchasable compounds that will be assessed experimentally by X-ray crystallography. -->
 本 SAMPL7 チャレンジではこのデータセットを活用して、各計算手法の予測精度を評価する。すなわち、結合分子と非結合分子の識別タスク、結合様式予測タスク、さらには、購入可能な化合物セットからリガンド候補を選別してX線結晶解析で実験的に結合を評価する機会を提供する。
 
@@ -15,9 +15,9 @@ PHIP というタンパク質の２番目のブロモドメイン、PHIP2 は低
 1) Identification of binders from fragment screening
 2) Prediction of fragment binding modes
 3) Selection of new compounds for screening from an experimental database -->
-本チャレンジは、タイトスケジュールだが少なくとも三段階から成る:  
-1) フラグメントスクリーニングの結合分子予測  
-2) 結合フラグメントの結合様式予測  
+本チャレンジは、タイトスケジュールだが少なくとも３段階から成る:  
+1) フラグメントスクリーニングによる結合分子の予測  
+2) 結合フラグメントの結合様式の予測  
 3) ライブラリ化合物からの新規結合化合物選別
 
 <!-- Stage 1 is now open and focuses on identification of binders. Unfortunately, the timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3). -->
@@ -34,12 +34,12 @@ PHIP というタンパク質の２番目のブロモドメイン、PHIP2 は低
 
 <!-- Two of PHIP’s domains are [bromodomains](https://en.wikipedia.org/wiki/Bromodomain), which are known to bind acetylated lysines.
 These post-translationally modified protein residues can be found on the N-terminal tails of histones and mediate the regulation of gene expression. -->
-PHIP の複数のドメインのうち、２つは [ブロモドメイン (bromodomains)](https://en.wikipedia.org/wiki/Bromodomain) であり、アセチル化リシンと結合することが知られている。このような翻訳語修飾が成されるアミノ酸残基はヒストン分子の N 末テール領域に存在し、遺伝子発現制御を仲介する。
+PHIP の複数のドメインのうち、２つは [ブロモドメイン (bromodomains)](https://en.wikipedia.org/wiki/Bromodomain) であり、アセチル化リシンと結合することが知られている。このような翻訳語修飾が成されるアミノ酸残基はヒストン分子の N 末端テール領域に存在し、遺伝子発現制御を仲介する。
 <!-- Bromodomains are attractive targets and several drugs are currently in clinical trials. -->
 ブロモドメインは魅力的な創薬標的であり、既にいくつかの薬剤の臨床治験が実施されている。
 
 <!-- X-ray crystallographic fragment screening experiments involve the [soaking of protein crystals with small fragment molecules](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Methods-for-Fragment-Screening.html) (<250 Da) into an apo crystal, followed by high-throughput automated X-ray crystallography and structure solution. -->
-X線結晶解析によるフラグメントスクリーニング実験では、[低分子フラグメント (250 Da 未満) を apo タンパク質結晶に浸潤させるソーキング法 (soaking)](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Methods-for-Fragment-Screening.html) で調製した試料をハイスループット自動化X線結晶解析に供し、構造を決定している。
+X線結晶解析によるフラグメントスクリーニング実験では、[低分子フラグメント（分子量250未満）を apo タンパク質結晶に浸潤させるソーキング法 (soaking)](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Methods-for-Fragment-Screening.html) で調製した試料をハイスループット自動化X線結晶解析に供し、構造を決定している。
 
 <!-- This enables the identification of binders while providing high resolution structural information. -->
 この実験によって、結合分子を同定すると同時に高解像度の構造情報が得られる。
@@ -51,7 +51,7 @@ X線結晶解析によるフラグメントスクリーニング実験では、[
 [XChem](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) において [PHIP の２番目のブロモドメイン (PHIP2)](https://www.uniprot.org/uniprot/Q8WWQ0#family_and_domains) を標的としてスクリーニングが実施され、複数のフラグメントヒット分子が同定された。
 
 <!-- This unpublished dataset offers an opportunity to computational chemists and biochemists to test their predictive methods in a blind trial focused on protein-fragment complexes. -->
-この未発表のデータセットを用いて、タンパク質-フラグメント複合体ブラインド予測の機会を提供するので、計算化学者･生化学者の皆さんは各自の予測手法を試すとよいだろう。
+この未発表のデータセットを用いて、タンパク質-フラグメント複合体ブラインド予測の機会を提供するので、計算化学者･生化学者の皆は各自の予測手法を試すとよいだろう。
 
 <!-- This edition of the SAMPL challenge will be divided into at least three stages. -->
 本 SAMPL チャレンジは少なくとも３つのステージから成る。
@@ -63,10 +63,10 @@ X線結晶解析によるフラグメントスクリーニング実験では、[
 本チャレンジは [Diamond Light Source](https://www.diamond.ac.uk/Home.html) の [XChem fragment screening facility / Macromolecular Crystallography (MX) program](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) との新たなコラボレーションによって実現された。特に [Harold Grosjean (Oxford)](https://www.linkedin.com/in/harold-grosjean-992741a8?originalSubdomain=uk)、[Rachel Skyner (Diamond)](https://scholar.google.com/citations?user=qC2iEdMAAAAJ&hl=en)、[Tobias Krojer (SGC Oxford)](https://thesgc.org/groupprofile/9489)、[Frank von Delft (SGC Oxford / Diamond)](https://www.thesgc.org/node/9489) に感謝の意を表する。
 
 <!-- The XChem fragment screening facility and Macromolecular Crystallography (MX) program at Diamond offer the ability to perform [high-throughput crystal soaking experiments](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) of several [fragment libraries](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html), and allow [both academic and industry groups](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Applying-for-XChem.html) to utilize their resources to advance drug discovery and the design of new chemical probes. -->
-[フラグメント化合物ライブラリ群](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) を対象とした [ハイスループット結晶ソーキング実験](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) の実施機会を XChem fragment screening facility and Macromolecular Crystallography (MX) program at Diamond は提供しており、[アカデミックのグループもインダストリーのグループも](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Applying-for-XChem.html) 各自のリソースを用いて創薬や化学プローブのデザインのために利用することができる。
+[フラグメント化合物ライブラリ群](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) を対象とした [ハイスループット結晶ソーキング実験](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) の実施機会を XChem fragment screening facility and Macromolecular Crystallography (MX) program at Diamond は提供しており、[アカデミアも企業のグループも](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Applying-for-XChem.html) 各自のリソースを用いて創薬や化学プローブのデザインのために利用することができる。
 
 <!-- Academic groups can apply for access via a simple [two-page proposal](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Applying-for-XChem/Standard-access.html). -->
-アカデミックのグループであれば簡単な [２ページのプロポーザル](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Applying-for-XChem/Standard-access.html) を提出することで応募して頂ける。
+アカデミアのグループであれば簡単な [２ページのプロポーザル](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Applying-for-XChem/Standard-access.html) を提出することで応募して頂ける。
 
 <!-- To get an idea for what existing XChem fragment screening datasets look like, you can use the [XChem Fragalysis browser](https://fragalysis.diamond.ac.uk) to interactively view fragment hits, or browse [all datasets available on Zenodo](https://zenodo.org/search?page=1&size=20&q=keywords:%22PanDDA%22) (example [here](https://zenodo.org/record/1244111#.XbiAzJNKiL4)). -->
 既存の XChem フラグメントスクリーニングのデータセットの様態については、[XChem Fragalysis browser](https://fragalysis.diamond.ac.uk) でインタラクティブにフラグメントヒットを閲覧できるのでご覧頂けると良いだろう。もしくは、[全データセットを Zenodo 上で提供している](https://zenodo.org/search?page=1&size=20&q=keywords:%22PanDDA%22) （[例](https://zenodo.org/record/1244111#.XbiAzJNKiL4)）のでブラウジング可能となっている。
@@ -81,7 +81,7 @@ X線結晶解析によるフラグメントスクリーニング実験では、[
 ## 参加要項
 
 <!-- Instructions on overall participation in this challenge/challenge rules are given in [../protein_ligand_instructions.md](../protein_ligand_instrucitons.md). This document provides challenge details as well as specifics for each stage. -->
-このチャレンジへの参加要項 及びルールは [../protein_ligand_instructions.md](../protein_ligand_instructions.md) に示す通りである。この文書がチャレンジ詳細及び各ステージの細則を規定する。
+このチャレンジへの参加要項及びルールは [../protein_ligand_instructions.md](../protein_ligand_instructions.md) に示す通りである。この文書がチャレンジ詳細及び各ステージの細則を規定する。
 
 <!-- ## Stage 1: Discrimination of binders from non-binders at specific sites -->
 ## ステージ１: 個々の結合部位における結合分子と非結合分子の識別
@@ -102,7 +102,7 @@ X線結晶解析によるフラグメントスクリーニング実験では、[
 特定の標的に対する特注ライブラリのデザイン含め、正確な結合予測によってフラグメントライブラリのデザインを改善できる可能性があり、フラグメント結合予測は重要な課題である。
 
 <!-- PHIP2 was crystallized in space group C2 at 4C by vapour diffusion in ~230 nL sitting drops, by mixing 100 nL protein (in 10 mM HEPES, 5% glycerol, 500 mM NaCl and 0.5 mM TCEP pH 7.5) with 100 nL reservoir buffer (20% PEG8000 and 0.4 M potassium phosphate) and 30 nL seeds of the same composition. -->
-PHIP2 は４℃にてシッティングドロップ蒸気拡散法で結晶化され、空間群 C2 に属していた。タンパク質溶液 100 nL (10 mM HEPES, 5% glycerol, 500 mM NaCl and 0.5 mM TCEP pH 7.5) とリザーバー緩衝液 100 nL (20% PEG8000 and 0.4 M potassium phosphate) を混合、そして同組成の 30 nL 種結晶を加えて ～230 nL の sitting drop を調製、最終溶液の pH は約 5.6 であった。
+PHIP2 は4℃にてシッティングドロップ蒸気拡散法で結晶化され、空間群 C2 に属していた。タンパク質溶液 100 nL (10 mM HEPES, 5% glycerol, 500 mM NaCl and 0.5 mM TCEP pH 7.5) とリザーバー緩衝液 100 nL (20% PEG8000 and 0.4 M potassium phosphate) を混合、そして同組成の 30 nL 種結晶を加えて ～230 nL の sitting drop を調製、最終溶液の pH は約 5.6 であった。
 <!-- The final pH was measured to be about 5.6. -->
 
 <!-- The resulting crystals were soaked with 20 mM final concentration of each fragment and 20%(v/v) ethylene glycol, plunged into liquid nitrogen and shot at the i04-1 beamline located at the Diamond Light Source (Harwell, UK). -->
