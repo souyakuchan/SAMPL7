@@ -16,7 +16,7 @@ PHIP というタンパク質の2番目のブロモドメイン、PHIP2 は低�
 2) Prediction of fragment binding modes
 3) Selection of new compounds for screening from an experimental database -->
 本チャレンジは、タイトスケジュールだが少なくとも３段階から成る:  
-1) フラグメントスクリーニングによる結合分子の予測  
+1) フラグメントスクリーニングで見出された結合分子の予測  
 2) 結合フラグメントの結合様式の予測  
 3) ライブラリ化合物からの新規結合化合物選別
 
