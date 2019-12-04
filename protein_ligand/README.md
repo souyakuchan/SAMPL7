@@ -21,7 +21,11 @@ PHIP というタンパク質の2番目のブロモドメイン、PHIP2 は低�
 3) ライブラリ化合物からの新規結合化合物選別
 
 <!-- Stage 1 is now open and focuses on identification of binders. Unfortunately, the timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3). -->
-現在ステージ１が開催中で、結合分子の同定にフォーカスしている。生憎、ステージ３の化合物スクリーニング実験のスケジュールの都合上、ステージ１と２は〆切がタイトとならざるを得ない。
+<!-- 現在ステージ１が開催中で、結合分子の同定にフォーカスしている。生憎、ステージ３の化合物スクリーニング実験のスケジュールの都合上、ステージ１と２は〆切がタイトとならざるを得ない。 -->
+<!--
+Stage 2 is now open and focuses on identification of binders (Stage 1 is now closed). Unfortunately, the timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3).
+-->
+現在ステージ２が開催中で、結合様式の予測にフォーカスしている（ステージ１は終了）。生憎、ステージ３の化合物スクリーニング実験のスケジュールの都合上、ステージ１と２は〆切がタイトとならざるを得ない。
 
 <!-- If you plan to participate, please [join our SAMPL7 e-mail list](http://eepurl.com/gpBBun) so we can keep you updated.-->
 参加したい場合は、[SAMPL7 メーリングリストに登録](http://eepurl.com/gpBBun) して頂ければアップデート情報が随時提供される。
@@ -190,14 +194,80 @@ PHIP2 の *アポ* 構造ファイル (`PHIPA_C2_Apo.pdb`) と、スクリーニ
 <!-- ## Stage 2: Prediction of binding poses for binding fragment -->
 ## ステージ２: 結合フラグメントの結合様式予測
 
-<!-- Plans for stage 2 are still being finalized, but this is planned to involve predicting the bound structures of the compounds which bind, the identity of which will be released at the end of the first stage. -->
-ステージ２の仕様は策定中。ただし、結合分子の結合様式の予測を含む予定である。結合分子の情報はステージ１終了時に公開される。
+<!--
+### Setup and description of Stage 2
+-->
+### ステージ２の仕様と詳細
+
+<!--
+**Aim**: The second part of the SAMPL7 challenge builds onto the first stage. The objective is to correctly predict the binding pose for each of protein-fragment complex identified by [PanDDA](https://pandda.bitbucket.io/). In total, 52 fragments were found to bind to the C2 crystal form described in stage 1. 45 hits were identified at the first site (denoted by a helium atom `S1` in the provided structure (`PHIPA_C2_apo_sites.pdb`)). 4 were found at the second site (denoted by a neon atom `S2`). The third (denoted by an argon atom `S3`) and the fourth site (denoted by a krypton atom `S4`) were each found to bind to a single distinct fragment. Accurate binding pose prediction is essential in structure-based drug discovery and in the elaboration/ optimization of known drugs and chemical probes.   
+-->
+**目的**: この SAMPL7 チャレンジの第２段階は、ステージ１に立脚する。ここでの目標は、[PanDDA](https://pandda.bitbucket.io/) で同定されたタンパク質-フラグメント複合体それぞれの結合様式を正確に予測することである。ステージ１で示した C2 結晶に対し、合計で 52 のフラグメントが結合することが見出された。１番目の結合部位（所与の構造 (`PHIPA_C2_apo_sites.pdb`) にて `S1` としてヘリウム原子で示した部位）には 45 個のヒットが同定された。２番目の結合部位（`S2` としてネオン原子で示した部位）には 4 個、３番目（`S3`、アルゴン原子）と４番目（`S4`、クリプトン原子）にはそれぞれ 1 個の単一のフラグメントの結合が見出された。<!-- 構造に基づく創薬および既存薬やケミカルプローブの合成展開/最適化においては、正確な結合様式予測が必須である。-->
+
+<!--
+The *apo* structure of PHIP2 that was provided in stage 1 (`PHIPA_C2_Apo.pdb`) may be used along with the [isomeric SMILES strings](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html) of the fragments identified (`stage2-input-data/site-1_fragment-hits.csv`) to carry out pose predictions, and **must be used to define the frame of reference for your pose predictions**. The acetylated-lysine binding site, being the most populated and pharmacologically relevant, will be the focus of the second stage. Optionally, participants may also try to extend their predictions to the other sites (Site 2:`stage2-input-data/site-2_fragment-hits.csv`, Site 3:`stage2-input-data/site-3_fragment-hits.csv`, Site 4:`stage2-input-data/site-4_fragment-hits.csv`). Other structures and information may also be used in the predictions. However, the predicted protein-ligand poses must be aligned to the reference structure (`PHIPA_C2_Apo.pdb`) for assessment purposes.
+-->
+結合様式を予測するにあたって、各部位 (Site 1:`stage2-input-data/site-1_fragment-hits.csv`, Site 2:`stage2-input-data/site-2_fragment-hits.csv`, Site 3:`stage2-input-data/site-3_fragment-hits.csv`, Site 4:`stage2-input-data/site-4_fragment-hits.csv`) に同定された結合フラグメントの [isomeric SMILES strings](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html) と共に、ステージ１で与えられた PHIP2 の *アポ* 構造 (`PHIPA_C2_Apo.pdb`) を用いることができる。また、**各自の結合様式予測結果は、参照構造 (`PHIPA_C2_Apo.pdb`) の座標フレームに合わせなければならない。** 今回最もヒットが多くかつ薬理学的に重要である、アセチル化リシン結合サイトが第２ステージの焦点となるだろう。オプションとして、参加者は他の部位 (Site 2:`stage2-input-data/site-2_fragment-hits.csv`, Site 3:`stage2-input-data/site-3_fragment-hits.csv`, Site 4:`stage2-input-data/site-4_fragment-hits.csv`) に対しても予測を実施してよい。アポ構造以外の構造や情報も予測に用いてよいが、座標は評価に用いるので、予測したタンパク質-リガンド結合様式は参照構造 (`PHIPA_C2_Apo.pdb`) にアラインメントすること。
+
+<!--
+Please, note that predictions should be done considering the C2 crystal form and soaking method described in Stage 1. Other, structures are available on the PDB but were identified using another crystal form. Screening against different crystal forms often lead to differential fragment-hit identification due to solution and solid states effects such as pH and crystal packing.
+-->
+所与の C2 結晶構造とステージ１にて説明されている結晶ソーキング法を考慮して予測を実施してください。他にも PDB で構造は手に入るが、結晶形が異なる。異なる結晶形に対するスクリーニングにおいては、pH や結晶パッキングなど、溶液状態や固相状態の影響によって異なるフラグメントヒットの発見につながる可能性がある。
+
+<!--
+### Provided data for Stage 2
+-->
+### ステージ２で与えられるデータ
+<!--
+- Apo structure of the protein: See Manifest below
+- isomeric SMILES strings for the binding fragments for each site: See Manifest below
+- Coordinates of atoms marking the binding sites are provided in the `PHIPA_C2_apo_sites.pdb` file, as described above
+- Rules: See below
+- Submission format: To be posted shortly; note that you will need to submit a text method description and posed ligands (see Rules below).
+-->
+- 当該タンパク質のアポ構造: 下記ファイルリスト参照
+- 各部位の結合フラグメントの isomeric SMILES strings: 下記ファイルリスト参照
+- `PHIPA_C2_apo_sites.pdb` に示された各結合部位のマーカー原子の座標（上述）
+- ルール: 下記参照
+- 提出フォーマット: 近日開示する予定（手法の詳細およびリガンドの結合ポーズ座標を提出することになるだろう（下記ルール参照））
+
+<!--
+### Rules for Stage 2
+-->
+### ステージ２のルール
 
 <!-- **Start date:** Friday the 29th of November 2019 -->
 **開始日**: 2019 年 11 月 29 日 (金)
 
 <!-- **End date:**  Thursday the 12th of December 2019 -->
-**終了日**: 2019 年 12 月 12 日 (木)
+**終了日**: 2019 年 12 月 12 日 (木) 24:00 (US Pacific time)
+
+<!--
+In brief, expect to submit a detailed text format method description similar to that used in Stage 1, as well as poses for all of your predicted binders in the same frame of reference as the provided apo structure (`PHIPA_C2_Apo.pdb`). It is likely that submissions will be requested to include only ligand poses (in .mol2, .sdf or .pdb format) without the protein, though this is still being finalized. Submission instructions will be provided here once available.
+-->
+提出物の概略としては、ステージ１同様に手法の詳細と、所与のアポ構造 (`PHIPA_C2_Apo.pdb`) と同じ座標フレームに合わせた予測結合ポーズとなるだろう。タンパク質の構造を除いたリガンドの予測座標（.mol2 もしくは .sdf もしくは .pdb フォーマット）のみを提出してもらうことになると考えられるが、未確定である。提出要項は、確定次第こちらで開示する。
+
+<!--
+If you choose to use other protein structures other than the provided apo structure in making your predictions, these should be described in your Method description. You may draw on any existing literature data that you wish, just make sure to clearly describe any data utilized in your Methods.
+-->
+もし所与のアポ構造以外のタンパク質構造を予測に用いた場合は、手法の説明に記載すること。既存の文献のデータを各自の好きに利用してよいが、どのデータを用いたかについては手法に必ず明記すること。
+
+<!--
+You must predict binding modes for all 45 hits binding in site S1 for your submission to be ranked. Prediction of poses in the alternate sites is optional and pose predictions for alternate sites will be ranked separately for those submissions predicting poses for those compounds.
+-->
+提出物を順位付け対象とするには、S1 部位に対する 45 個の結合ヒット全てに対して結合様式予測を行う必要がある。その他の部位の結合様式予測についてはオマケ扱いだが、部位ごとに分けて順位付けが成される。
+
+<!--
+As in Stage 1, while you are welcome to submit multiple entries in order to test diverse methods, as per our [policy on multiple submissions](https://samplchallenges.github.io/roadmap/submissions/), each participant or organization is allowed only one ranked submission, which must be clearly indicated as such by filling the appropriate field in the submission form.
+We also accept non-ranked submissions, which we will not formally judge. These allow us to certify that your calculations were done without knowing the answers, but do not receive formal ranking, as discussed at the link above.
+-->
+ステージ１と同様、様々な手法を試すために各自複数のエントリーを提出することは歓迎だが、我々の [複数提出の場合のポリシー](https://samplchallenges.github.io/roadmap/submissions/) の通り、順位付けされる提出エントリーは各参加者/組織につき１つのみであり、どれを順位付け対象とするかは提出フォームの該当欄で明示しておくこと。順位付け対象外の提出も受け付けるが、我々の公式の判定対象とはならない。こうすることによって、参加者が答えを知らない状態でブラインド計算したということを保証することができるが、公式順位は付かない。上記リンク先で議論されている通りである。
+
+<!--
+If multiple submissions are incorrectly provided as "ranked" by a single participant, we will judge only one of them; likely this will be the first submitted, but it may be a random submission.
+-->
+１人の参加者が複数の提出エントリーを誤ってランキング対象として送信してしまった場合にも、公式順位を判定するのはそのうち１つのみである。恐らく１番目の提出エントリーを採用するが、違うかもしれない。
+
 
 <!-- ## Stage 3: Selection of novel binders from a database -->
 ## ステージ３: データベース化合物からの新規結合分子選別
